@@ -5,7 +5,9 @@ public class Calculator extends javax.swing.JFrame {
     private boolean decidisp;
     private double inta;
     private double intb;
-    private double out;
+    private double out; 
+    private boolean degrad;
+    private boolean sft;
     
     public Calculator() {
         initComponents();
@@ -404,17 +406,32 @@ public class Calculator extends javax.swing.JFrame {
         degree.setText("Degree");
         degree.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         degree.setFocusable(false);
+        degree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                degreeActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(radian);
         radian.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         radian.setText("Radians");
         radian.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         radian.setFocusable(false);
+        radian.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radianActionPerformed(evt);
+            }
+        });
 
         shift.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         shift.setText("Sh");
         shift.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         shift.setFocusable(false);
+        shift.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shiftMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -795,15 +812,63 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_pieActionPerformed
 
     private void cosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        if(!sft)
+        {
+            if(!degrad)
+            {
+                display2.setText("cos(" + String.valueOf(intb) + ")");
+                intb *= 0.0174532925;
+            }
+            out = Math.cos(intb);
+        }
+        else
+        {
+            display2.setText("cosh(" + String.valueOf(intb) + ")");
+            out = Math.cosh(intb);
+        }
+        display1.setText(String.valueOf(out));
+        out = 0;
     }//GEN-LAST:event_cosActionPerformed
 
     private void tanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        if(!sft)
+        {
+            if(!degrad)
+            {
+                display2.setText("tan(" + String.valueOf(intb) + ")");
+                intb *= 0.0174532925;
+            }
+            out = Math.tan(intb);
+        }
+        else
+        {
+            display2.setText("tanh(" + String.valueOf(intb) + ")");
+            out = Math.tanh(intb);
+        }
+        display1.setText(String.valueOf(out));
+        out = 0;
     }//GEN-LAST:event_tanActionPerformed
 
     private void sinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        if(!sft)
+        {
+            if(!degrad)
+            {
+                display2.setText("sin(" + String.valueOf(intb) + ")");
+                intb *= 0.0174532925;
+            }
+            out = Math.sin(intb);
+        }
+        else
+        {
+            display2.setText("sinh(" + String.valueOf(intb) + ")");
+            out = Math.sinh(intb);
+        }
+        display1.setText(String.valueOf(out));
+        out = 0;
     }//GEN-LAST:event_sinActionPerformed
 
     private void fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveActionPerformed
@@ -847,6 +912,23 @@ public class Calculator extends javax.swing.JFrame {
         display1.setText(display1.getText() + "9");
         zerodisp = true;
     }//GEN-LAST:event_nineActionPerformed
+
+    private void shiftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shiftMouseClicked
+        if(!sft)
+        {
+            sft = true;
+        }
+        else
+            sft = false;
+    }//GEN-LAST:event_shiftMouseClicked
+
+    private void radianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radianActionPerformed
+        degrad = true; 
+    }//GEN-LAST:event_radianActionPerformed
+
+    private void degreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeActionPerformed
+        degrad = false;
+    }//GEN-LAST:event_degreeActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
