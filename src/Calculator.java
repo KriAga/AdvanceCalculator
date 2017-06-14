@@ -607,7 +607,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_memorydisplayActionPerformed
 
     private void memoryclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryclearActionPerformed
-        memorydisplay.setText(setText("0"));
+        memorydisplay.setText("0");
     }//GEN-LAST:event_memoryclearActionPerformed
 
     private void memoryreadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryreadActionPerformed
