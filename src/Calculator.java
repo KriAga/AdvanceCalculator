@@ -623,7 +623,18 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_memorysaveActionPerformed
 
     private void onedividedbyxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onedividedbyxActionPerformed
-        inb = Double.parseDouble
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        out = 1/ intb;
+        if( out > -100000000 && out < 100000000)
+        {
+            display1.setText(String.valueOf(out));  
+        }
+        else{
+            display1.setText("Error");
+        }
+        display2.setText("1/"+String.valueOf(intb));
+        out  = 0;
+        
     }//GEN-LAST:event_onedividedbyxActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
@@ -685,11 +696,25 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_twoActionPerformed
 
     private void cubedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubedActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        out = intb * intb * intb;
+        if( out > -100000000 && out < 100000000)
+        {
+            display1.setText(String.valueOf(out));  
+        }
+        else{
+            display1.setText("Error");
+        }
+        display2.setText(String.valueOf(intb) + "³");
+        out  = 0;
     }//GEN-LAST:event_cubedActionPerformed
 
     private void squarerootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squarerootActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        out = Math.sqrt(intb);
+        display1.setText(String.valueOf(out));
+        display2.setText("√" + String.valueOf(intb));
+        out  = 0;
     }//GEN-LAST:event_squarerootActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
@@ -729,7 +754,17 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_resetActionPerformed
 
     private void squaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squaredActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        out = intb * intb;
+        if( out > -100000000 && out < 100000000)
+        {
+            display1.setText(String.valueOf(out));  
+        }
+        else{
+            display1.setText("Error");
+        }
+        display2.setText(String.valueOf(intb) + "²");
+        out  = 0;
     }//GEN-LAST:event_squaredActionPerformed
 
     private void subtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractActionPerformed
@@ -737,7 +772,11 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_subtractActionPerformed
 
     private void cuberootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuberootActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        out = Math.cbrt(intb);
+        display1.setText(String.valueOf(out));
+        display2.setText("³√" + String.valueOf(intb));
+        out  = 0;
     }//GEN-LAST:event_cuberootActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
@@ -751,7 +790,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_clearActionPerformed
 
     private void pieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pieActionPerformed
-        // TODO add your handling code here:
+        display1.setText(String.valueOf(Math.PI));
     }//GEN-LAST:event_pieActionPerformed
 
     private void cosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosActionPerformed
