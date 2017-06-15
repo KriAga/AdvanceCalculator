@@ -6,6 +6,7 @@ public class Calculator extends javax.swing.JFrame {
     private double inta;
     private double intb;
     private double out; 
+    private byte op;
     private boolean degrad;
     private boolean sft;
     
@@ -60,7 +61,10 @@ public class Calculator extends javax.swing.JFrame {
         jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Krishna-Calci");
+        setResizable(false);
 
+        memorydisplay.setBackground(new java.awt.Color(199, 218, 220));
         memorydisplay.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         memorydisplay.setText("0");
         memorydisplay.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -71,10 +75,12 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
+        display2.setBackground(new java.awt.Color(199, 218, 220));
         display2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         display2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         display2.setFocusable(false);
 
+        display1.setBackground(new java.awt.Color(199, 218, 220));
         display1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         display1.setText("0");
         display1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -83,6 +89,7 @@ public class Calculator extends javax.swing.JFrame {
         memoryclear.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         memoryclear.setText("MC");
         memoryclear.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        memoryclear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         memoryclear.setFocusable(false);
         memoryclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +100,7 @@ public class Calculator extends javax.swing.JFrame {
         memoryread.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         memoryread.setText("MR");
         memoryread.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        memoryread.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         memoryread.setFocusable(false);
         memoryread.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +111,7 @@ public class Calculator extends javax.swing.JFrame {
         percent.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         percent.setText("%");
         percent.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        percent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         percent.setFocusable(false);
         percent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,6 +122,7 @@ public class Calculator extends javax.swing.JFrame {
         memorysave.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         memorysave.setText("MS");
         memorysave.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        memorysave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         memorysave.setFocusable(false);
         memorysave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +133,7 @@ public class Calculator extends javax.swing.JFrame {
         onedividedbyx.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         onedividedbyx.setText("1/x");
         onedividedbyx.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        onedividedbyx.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         onedividedbyx.setFocusable(false);
         onedividedbyx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,6 +144,7 @@ public class Calculator extends javax.swing.JFrame {
         cos.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         cos.setText("Cos");
         cos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cos.setFocusable(false);
         cos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +155,7 @@ public class Calculator extends javax.swing.JFrame {
         pie.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         pie.setText("π");
         pie.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        pie.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pie.setFocusable(false);
         pie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,6 +166,7 @@ public class Calculator extends javax.swing.JFrame {
         add.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         add.setText("+");
         add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add.setFocusable(false);
         add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +177,7 @@ public class Calculator extends javax.swing.JFrame {
         seven.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         seven.setText("7");
         seven.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        seven.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         seven.setFocusable(false);
         seven.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -173,6 +188,7 @@ public class Calculator extends javax.swing.JFrame {
         nine.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         nine.setText("9");
         nine.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        nine.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nine.setFocusable(false);
         nine.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,6 +199,7 @@ public class Calculator extends javax.swing.JFrame {
         four.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         four.setText("4");
         four.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        four.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         four.setFocusable(false);
         four.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +210,7 @@ public class Calculator extends javax.swing.JFrame {
         six.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         six.setText("6");
         six.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        six.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         six.setFocusable(false);
         six.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,6 +221,7 @@ public class Calculator extends javax.swing.JFrame {
         one.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         one.setText("1");
         one.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        one.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         one.setFocusable(false);
         one.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -213,6 +232,7 @@ public class Calculator extends javax.swing.JFrame {
         eight.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         eight.setText("8");
         eight.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        eight.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         eight.setFocusable(false);
         eight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -223,6 +243,7 @@ public class Calculator extends javax.swing.JFrame {
         two.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         two.setText("2");
         two.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        two.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         two.setFocusable(false);
         two.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +254,7 @@ public class Calculator extends javax.swing.JFrame {
         cubed.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         cubed.setText("x³");
         cubed.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cubed.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cubed.setFocusable(false);
         cubed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -243,6 +265,7 @@ public class Calculator extends javax.swing.JFrame {
         squareroot.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         squareroot.setText("√x");
         squareroot.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        squareroot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         squareroot.setFocusable(false);
         squareroot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,6 +276,7 @@ public class Calculator extends javax.swing.JFrame {
         multiply.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         multiply.setText("*");
         multiply.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        multiply.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         multiply.setFocusable(false);
         multiply.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,6 +287,7 @@ public class Calculator extends javax.swing.JFrame {
         zero.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         zero.setText("0");
         zero.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        zero.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         zero.setFocusable(false);
         zero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,6 +298,7 @@ public class Calculator extends javax.swing.JFrame {
         divide.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         divide.setText("/");
         divide.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        divide.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         divide.setFocusable(false);
         divide.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,6 +309,7 @@ public class Calculator extends javax.swing.JFrame {
         decpoint.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         decpoint.setText(".");
         decpoint.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        decpoint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         decpoint.setFocusable(false);
         decpoint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -293,6 +320,7 @@ public class Calculator extends javax.swing.JFrame {
         reset.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         reset.setText("C");
         reset.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        reset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         reset.setFocusable(false);
         reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,6 +331,7 @@ public class Calculator extends javax.swing.JFrame {
         squared.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         squared.setText("x²");
         squared.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        squared.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         squared.setFocusable(false);
         squared.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,6 +342,7 @@ public class Calculator extends javax.swing.JFrame {
         subtract.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         subtract.setText("-");
         subtract.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        subtract.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         subtract.setFocusable(false);
         subtract.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -323,6 +353,7 @@ public class Calculator extends javax.swing.JFrame {
         cuberoot.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         cuberoot.setText("3√x");
         cuberoot.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        cuberoot.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cuberoot.setFocusable(false);
         cuberoot.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -333,6 +364,7 @@ public class Calculator extends javax.swing.JFrame {
         equals.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         equals.setText("=");
         equals.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        equals.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         equals.setFocusable(false);
         equals.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -343,6 +375,7 @@ public class Calculator extends javax.swing.JFrame {
         clear.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         clear.setText("CE");
         clear.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         clear.setFocusable(false);
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -353,6 +386,7 @@ public class Calculator extends javax.swing.JFrame {
         tan.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         tan.setText("Tan");
         tan.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tan.setFocusable(false);
         tan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,6 +397,7 @@ public class Calculator extends javax.swing.JFrame {
         sin.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         sin.setText("Sin");
         sin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sin.setFocusable(false);
         sin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,6 +408,7 @@ public class Calculator extends javax.swing.JFrame {
         five.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         five.setText("5");
         five.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        five.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         five.setFocusable(false);
         five.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,6 +419,7 @@ public class Calculator extends javax.swing.JFrame {
         negate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         negate.setText("±");
         negate.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        negate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         negate.setFocusable(false);
         negate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -393,6 +430,7 @@ public class Calculator extends javax.swing.JFrame {
         three.setFont(new java.awt.Font("Arial", 1, 10)); // NOI18N
         three.setText("3");
         three.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        three.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         three.setFocusable(false);
         three.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,6 +443,7 @@ public class Calculator extends javax.swing.JFrame {
         degree.setSelected(true);
         degree.setText("Degree");
         degree.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        degree.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         degree.setFocusable(false);
         degree.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -416,6 +455,7 @@ public class Calculator extends javax.swing.JFrame {
         radian.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         radian.setText("Radians");
         radian.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        radian.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         radian.setFocusable(false);
         radian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,6 +466,7 @@ public class Calculator extends javax.swing.JFrame {
         shift.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         shift.setText("Sh");
         shift.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        shift.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shift.setFocusable(false);
         shift.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -610,7 +651,7 @@ public class Calculator extends javax.swing.JFrame {
                                     .addComponent(decpoint, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cuberoot, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(tan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -619,10 +660,6 @@ public class Calculator extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void memorydisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memorydisplayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_memorydisplayActionPerformed
 
     private void memoryclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryclearActionPerformed
         memorydisplay.setText("0");
@@ -633,7 +670,12 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_memoryreadActionPerformed
 
     private void percentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_percentActionPerformed
-        // TODO add your handling code here:
+        inta = Double.parseDouble(String.valueOf(display1.getText()));
+        display1.setText("0");
+        display1.setText(String.valueOf(inta)+ "%(");
+        decidisp = false;
+        zerodisp = false;
+        op = 5;
     }//GEN-LAST:event_percentActionPerformed
 
     private void memorysaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memorysaveActionPerformed
@@ -652,11 +694,43 @@ public class Calculator extends javax.swing.JFrame {
         }
         display2.setText("1/"+String.valueOf(intb));
         out  = 0;
-        
+        op = 0;
     }//GEN-LAST:event_onedividedbyxActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        // TODO add your handling code here:
+        if(op == 0){
+            inta = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        else
+        {
+            intb = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        if(op == 1)
+        {
+            inta += intb;
+        }
+        if(op == 2)
+        {
+            inta -= intb;
+        }
+        if(op == 3)
+        {
+            inta *= intb;
+        }
+        if(op == 4)
+        {
+            inta /= intb;
+        }
+        if(op == 5)
+        {
+            inta *= intb;
+            inta /= 100;
+        }
+        display1.setText("0");
+        display2.setText(String.valueOf(inta) + " + ");
+        op = 1;
+        decidisp = false;
+        zerodisp = false;
     }//GEN-LAST:event_addActionPerformed
 
     private void sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenActionPerformed
@@ -725,6 +799,7 @@ public class Calculator extends javax.swing.JFrame {
         }
         display2.setText(String.valueOf(intb) + "³");
         out  = 0;
+        op = 0;
     }//GEN-LAST:event_cubedActionPerformed
 
     private void squarerootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squarerootActionPerformed
@@ -733,10 +808,43 @@ public class Calculator extends javax.swing.JFrame {
         display1.setText(String.valueOf(out));
         display2.setText("√" + String.valueOf(intb));
         out  = 0;
+        op = 0;
     }//GEN-LAST:event_squarerootActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        // TODO add your handling code here:
+        if(op == 0){
+            inta = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        else
+        {
+            intb = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        if(op == 1)
+        {
+            inta += intb;
+        }
+        if(op == 2)
+        {
+            inta -= intb;
+        }
+        if(op == 3)
+        {
+            inta *= intb;
+        }
+        if(op == 4)
+        {
+            inta /= intb;
+        }
+        if(op == 5)
+        {
+            inta *= intb;
+            inta /= 100;
+        }
+        display1.setText("0");
+        display2.setText(String.valueOf(inta) + " * ");
+        op = 3;
+        decidisp = false;
+        zerodisp = false;
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroActionPerformed
@@ -748,7 +856,39 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_zeroActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        // TODO add your handling code here:
+        if(op == 0){
+            inta = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        else
+        {
+            intb = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        if(op == 1)
+        {
+            inta += intb;
+        }
+        if(op == 2)
+        {
+            inta -= intb;
+        }
+        if(op == 3)
+        {
+            inta *= intb;
+        }
+        if(op == 4)
+        {
+            inta /= intb;
+        }
+        if(op == 5)
+        {
+            inta *= intb;
+            inta /= 100;
+        }
+        display1.setText("0");
+        display2.setText(String.valueOf(inta) + " / ");
+        op = 4;
+        decidisp = false;
+        zerodisp = false;
     }//GEN-LAST:event_divideActionPerformed
 
     private void decpointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decpointActionPerformed
@@ -769,6 +909,7 @@ public class Calculator extends javax.swing.JFrame {
         inta = 0;
         intb = 0;
         out = 0;
+        op = 0;
     }//GEN-LAST:event_resetActionPerformed
 
     private void squaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squaredActionPerformed
@@ -783,10 +924,43 @@ public class Calculator extends javax.swing.JFrame {
         }
         display2.setText(String.valueOf(intb) + "²");
         out  = 0;
+        op = 0;
     }//GEN-LAST:event_squaredActionPerformed
 
     private void subtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractActionPerformed
-        // TODO add your handling code here:
+        if(op == 0){
+            inta = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        else
+        {
+            intb = Double.parseDouble(String.valueOf(display1.getText()));
+        }
+        if(op == 1)
+        {
+            inta += intb;
+        }
+        if(op == 2)
+        {
+            inta -= intb;
+        }
+        if(op == 3)
+        {
+            inta *= intb;
+        }
+        if(op == 4)
+        {
+            inta /= intb;
+        }
+        if(op == 5)
+        {
+            inta *= intb;
+            inta /= 100;
+        }
+        display1.setText("0");
+        display2.setText(String.valueOf(inta) + " - ");
+        op = 2;
+        decidisp = false;
+        zerodisp = false;
     }//GEN-LAST:event_subtractActionPerformed
 
     private void cuberootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cuberootActionPerformed
@@ -795,10 +969,53 @@ public class Calculator extends javax.swing.JFrame {
         display1.setText(String.valueOf(out));
         display2.setText("³√" + String.valueOf(intb));
         out  = 0;
+        op = 0;
     }//GEN-LAST:event_cuberootActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
-        // TODO add your handling code here:
+        intb = Double.parseDouble(String.valueOf(display1.getText()));
+        if(op == 0)
+        {
+            out = intb;
+            display2.setText(String.valueOf(intb));
+        }
+        if(op == 1)
+        {
+            out = inta - intb;
+            display2.setText(display2.getText() + String.valueOf(intb));
+        }
+        if(op == 2)
+        {
+            out = inta - intb;
+            display2.setText(display2.getText() + String.valueOf(intb));
+        }
+        if(op == 3)
+        {
+            out = inta * intb;
+            display2.setText(display2.getText() + String.valueOf(intb));
+        }
+        if(op == 4)
+        {
+            out = inta / intb;
+            display2.setText(display2.getText() + String.valueOf(intb));
+        }
+        if(op == 5)
+        {
+            out = inta * intb / 100;
+            display2.setText(display2.getText() + String.valueOf(intb) + ")");
+        }
+        if( out > -100000000 && out < 100000000)
+        {
+            display1.setText(String.valueOf(out));  
+        }
+        else{
+            display1.setText("Error");
+        }
+        inta = 0;
+        intb = 0;
+        out = 0;
+        decidisp = false;
+        zerodisp = false;
     }//GEN-LAST:event_equalsActionPerformed
 
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
@@ -829,6 +1046,7 @@ public class Calculator extends javax.swing.JFrame {
         }
         display1.setText(String.valueOf(out));
         out = 0;
+        op = 0;
     }//GEN-LAST:event_cosActionPerformed
 
     private void tanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanActionPerformed
@@ -849,6 +1067,7 @@ public class Calculator extends javax.swing.JFrame {
         }
         display1.setText(String.valueOf(out));
         out = 0;
+        op = 0;
     }//GEN-LAST:event_tanActionPerformed
 
     private void sinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinActionPerformed
@@ -869,6 +1088,7 @@ public class Calculator extends javax.swing.JFrame {
         }
         display1.setText(String.valueOf(out));
         out = 0;
+        op = 0;
     }//GEN-LAST:event_sinActionPerformed
 
     private void fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveActionPerformed
@@ -929,6 +1149,10 @@ public class Calculator extends javax.swing.JFrame {
     private void degreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeActionPerformed
         degrad = false;
     }//GEN-LAST:event_degreeActionPerformed
+
+    private void memorydisplayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memorydisplayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memorydisplayActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
