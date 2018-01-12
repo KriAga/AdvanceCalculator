@@ -1,4 +1,3 @@
-import java.math.*;
 public class Calculator extends javax.swing.JFrame {
     
     private boolean zerodisp;
@@ -1134,12 +1133,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_nineActionPerformed
 
     private void shiftMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shiftMouseClicked
-        if(!sft)
-        {
-            sft = true;
-        }
-        else
-            sft = false;
+        sft = !sft;
     }//GEN-LAST:event_shiftMouseClicked
 
     private void radianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radianActionPerformed
@@ -1155,10 +1149,9 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_memorydisplayActionPerformed
 
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Calculator().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() ->
+        {
+            new Calculator().setVisible(true);
         });
     }
 
