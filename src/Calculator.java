@@ -1,17 +1,23 @@
-public class Calculator extends javax.swing.JFrame {
-    
+
+import javax.swing.*;
+
+public class Calculator extends javax.swing.JFrame
+{
+
     private boolean zerodisp;
     private boolean decidisp;
     private double inta;
     private double intb;
-    private double out; 
+    private double out;
     private byte op;
     private boolean degrad;
     private boolean sft;
-    
-    public Calculator() {
+
+    public Calculator()
+    {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -671,7 +677,7 @@ public class Calculator extends javax.swing.JFrame {
     private void percentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_percentActionPerformed
         inta = Double.parseDouble(String.valueOf(display1.getText()));
         display1.setText("0");
-        display1.setText(String.valueOf(inta)+ "%(");
+        display1.setText(String.valueOf(inta) + "%(");
         decidisp = false;
         zerodisp = false;
         op = 5;
@@ -683,44 +689,30 @@ public class Calculator extends javax.swing.JFrame {
 
     private void onedividedbyxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onedividedbyxActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
-        out = 1/ intb;
-        if( out > -100000000 && out < 100000000)
-        {
-            display1.setText(String.valueOf(out));  
-        }
-        else{
+        out = 1 / intb;
+        if (out > -100000000 && out < 100000000)
+            display1.setText(String.valueOf(out));
+        else
             display1.setText("Error");
-        }
-        display2.setText("1/"+String.valueOf(intb));
-        out  = 0;
+        display2.setText("1/" + String.valueOf(intb));
+        out = 0;
         op = 0;
     }//GEN-LAST:event_onedividedbyxActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        if(op == 0){
+        if (op == 0)
             inta = Double.parseDouble(String.valueOf(display1.getText()));
-        }
         else
-        {
             intb = Double.parseDouble(String.valueOf(display1.getText()));
-        }
-        if(op == 1)
-        {
+        if (op == 1)
             inta += intb;
-        }
-        if(op == 2)
-        {
+        if (op == 2)
             inta -= intb;
-        }
-        if(op == 3)
-        {
+        if (op == 3)
             inta *= intb;
-        }
-        if(op == 4)
-        {
+        if (op == 4)
             inta /= intb;
-        }
-        if(op == 5)
+        if (op == 5)
         {
             inta *= intb;
             inta /= 100;
@@ -733,55 +725,43 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_addActionPerformed
 
     private void sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "7");
         zerodisp = true;
     }//GEN-LAST:event_sevenActionPerformed
 
     private void fourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fourActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "4");
         zerodisp = true;
     }//GEN-LAST:event_fourActionPerformed
 
     private void sixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sixActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "6");
         zerodisp = true;
     }//GEN-LAST:event_sixActionPerformed
 
     private void oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "1");
         zerodisp = true;
     }//GEN-LAST:event_oneActionPerformed
 
     private void eightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eightActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "8");
         zerodisp = true;
     }//GEN-LAST:event_eightActionPerformed
 
     private void twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "2");
         zerodisp = true;
     }//GEN-LAST:event_twoActionPerformed
@@ -789,15 +769,12 @@ public class Calculator extends javax.swing.JFrame {
     private void cubedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cubedActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
         out = intb * intb * intb;
-        if( out > -100000000 && out < 100000000)
-        {
-            display1.setText(String.valueOf(out));  
-        }
-        else{
+        if (out > -100000000 && out < 100000000)
+            display1.setText(String.valueOf(out));
+        else
             display1.setText("Error");
-        }
         display2.setText(String.valueOf(intb) + "³");
-        out  = 0;
+        out = 0;
         op = 0;
     }//GEN-LAST:event_cubedActionPerformed
 
@@ -806,35 +783,24 @@ public class Calculator extends javax.swing.JFrame {
         out = Math.sqrt(intb);
         display1.setText(String.valueOf(out));
         display2.setText("√" + String.valueOf(intb));
-        out  = 0;
+        out = 0;
         op = 0;
     }//GEN-LAST:event_squarerootActionPerformed
 
     private void multiplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplyActionPerformed
-        if(op == 0){
+        if (op == 0)
             inta = Double.parseDouble(String.valueOf(display1.getText()));
-        }
         else
-        {
             intb = Double.parseDouble(String.valueOf(display1.getText()));
-        }
-        if(op == 1)
-        {
+        if (op == 1)
             inta += intb;
-        }
-        if(op == 2)
-        {
+        if (op == 2)
             inta -= intb;
-        }
-        if(op == 3)
-        {
+        if (op == 3)
             inta *= intb;
-        }
-        if(op == 4)
-        {
+        if (op == 4)
             inta /= intb;
-        }
-        if(op == 5)
+        if (op == 5)
         {
             inta *= intb;
             inta /= 100;
@@ -847,38 +813,25 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_multiplyActionPerformed
 
     private void zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "0");
     }//GEN-LAST:event_zeroActionPerformed
 
     private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        if(op == 0){
+        if (op == 0)
             inta = Double.parseDouble(String.valueOf(display1.getText()));
-        }
         else
-        {
             intb = Double.parseDouble(String.valueOf(display1.getText()));
-        }
-        if(op == 1)
-        {
+        if (op == 1)
             inta += intb;
-        }
-        if(op == 2)
-        {
+        if (op == 2)
             inta -= intb;
-        }
-        if(op == 3)
-        {
+        if (op == 3)
             inta *= intb;
-        }
-        if(op == 4)
-        {
+        if (op == 4)
             inta /= intb;
-        }
-        if(op == 5)
+        if (op == 5)
         {
             inta *= intb;
             inta /= 100;
@@ -891,7 +844,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_divideActionPerformed
 
     private void decpointActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_decpointActionPerformed
-        if( !decidisp)
+        if (!decidisp)
         {
             display1.setText(display1.getText() + ".");
             decidisp = true;
@@ -901,10 +854,10 @@ public class Calculator extends javax.swing.JFrame {
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display1.setText("0");
         display2.setText(null);
-        
+
         zerodisp = false;
         decidisp = false;
-        
+
         inta = 0;
         intb = 0;
         out = 0;
@@ -914,43 +867,29 @@ public class Calculator extends javax.swing.JFrame {
     private void squaredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_squaredActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
         out = intb * intb;
-        if( out > -100000000 && out < 100000000)
-        {
-            display1.setText(String.valueOf(out));  
-        }
-        else{
+        if (out > -100000000 && out < 100000000)
+            display1.setText(String.valueOf(out));
+        else
             display1.setText("Error");
-        }
         display2.setText(String.valueOf(intb) + "²");
-        out  = 0;
+        out = 0;
         op = 0;
     }//GEN-LAST:event_squaredActionPerformed
 
     private void subtractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtractActionPerformed
-        if(op == 0){
+        if (op == 0)
             inta = Double.parseDouble(String.valueOf(display1.getText()));
-        }
         else
-        {
             intb = Double.parseDouble(String.valueOf(display1.getText()));
-        }
-        if(op == 1)
-        {
+        if (op == 1)
             inta += intb;
-        }
-        if(op == 2)
-        {
+        if (op == 2)
             inta -= intb;
-        }
-        if(op == 3)
-        {
+        if (op == 3)
             inta *= intb;
-        }
-        if(op == 4)
-        {
+        if (op == 4)
             inta /= intb;
-        }
-        if(op == 5)
+        if (op == 5)
         {
             inta *= intb;
             inta /= 100;
@@ -967,49 +906,46 @@ public class Calculator extends javax.swing.JFrame {
         out = Math.cbrt(intb);
         display1.setText(String.valueOf(out));
         display2.setText("³√" + String.valueOf(intb));
-        out  = 0;
+        out = 0;
         op = 0;
     }//GEN-LAST:event_cuberootActionPerformed
 
     private void equalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalsActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
-        if(op == 0)
+        if (op == 0)
         {
             out = intb;
             display2.setText(String.valueOf(intb));
         }
-        if(op == 1)
+        if (op == 1)
+        {
+            out = inta + intb;
+            display2.setText(display2.getText() + String.valueOf(intb));
+        }
+        if (op == 2)
         {
             out = inta - intb;
             display2.setText(display2.getText() + String.valueOf(intb));
         }
-        if(op == 2)
-        {
-            out = inta - intb;
-            display2.setText(display2.getText() + String.valueOf(intb));
-        }
-        if(op == 3)
+        if (op == 3)
         {
             out = inta * intb;
             display2.setText(display2.getText() + String.valueOf(intb));
         }
-        if(op == 4)
+        if (op == 4)
         {
             out = inta / intb;
             display2.setText(display2.getText() + String.valueOf(intb));
         }
-        if(op == 5)
+        if (op == 5)
         {
             out = inta * intb / 100;
             display2.setText(display2.getText() + String.valueOf(intb) + ")");
         }
-        if( out > -100000000 && out < 100000000)
-        {
-            display1.setText(String.valueOf(out));  
-        }
-        else{
+        if (out > -100000000 && out < 100000000)
+            display1.setText(String.valueOf(out));
+        else
             display1.setText("Error");
-        }
         inta = 0;
         intb = 0;
         out = 0;
@@ -1029,16 +965,15 @@ public class Calculator extends javax.swing.JFrame {
 
     private void cosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cosActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
-        if(!sft)
+        if (!sft)
         {
-            if(!degrad)
+            if (!degrad)
             {
                 display2.setText("cos(" + String.valueOf(intb) + ")");
                 intb *= 0.0174532925;
             }
             out = Math.cos(intb);
-        }
-        else
+        } else
         {
             display2.setText("cosh(" + String.valueOf(intb) + ")");
             out = Math.cosh(intb);
@@ -1050,16 +985,15 @@ public class Calculator extends javax.swing.JFrame {
 
     private void tanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tanActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
-        if(!sft)
+        if (!sft)
         {
-            if(!degrad)
+            if (!degrad)
             {
                 display2.setText("tan(" + String.valueOf(intb) + ")");
                 intb *= 0.0174532925;
             }
             out = Math.tan(intb);
-        }
-        else
+        } else
         {
             display2.setText("tanh(" + String.valueOf(intb) + ")");
             out = Math.tanh(intb);
@@ -1071,16 +1005,15 @@ public class Calculator extends javax.swing.JFrame {
 
     private void sinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sinActionPerformed
         intb = Double.parseDouble(String.valueOf(display1.getText()));
-        if(!sft)
+        if (!sft)
         {
-            if(!degrad)
+            if (!degrad)
             {
                 display2.setText("sin(" + String.valueOf(intb) + ")");
                 intb *= 0.0174532925;
             }
             out = Math.sin(intb);
-        }
-        else
+        } else
         {
             display2.setText("sinh(" + String.valueOf(intb) + ")");
             out = Math.sinh(intb);
@@ -1091,43 +1024,34 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_sinActionPerformed
 
     private void fiveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fiveActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "5");
         zerodisp = true;
     }//GEN-LAST:event_fiveActionPerformed
 
     private void negateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_negateActionPerformed
-        
+
         intb = Double.parseDouble(String.valueOf(display1.getText()));
         out = -1 * intb;
-        if( out > -100000000 && out < 100000000)
-        {
-            display1.setText(String.valueOf(out));  
-        }
-        else{
+        if (out > -100000000 && out < 100000000)
+            display1.setText(String.valueOf(out));
+        else
             display1.setText("Error");
-        }
         decidisp = true;
         out = 0;
     }//GEN-LAST:event_negateActionPerformed
 
     private void threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "3");
         zerodisp = true;
     }//GEN-LAST:event_threeActionPerformed
 
     private void nineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nineActionPerformed
-        if( !zerodisp && !decidisp )
-        {
+        if (!zerodisp && !decidisp)
             display1.setText(null);
-        }
         display1.setText(display1.getText() + "9");
         zerodisp = true;
     }//GEN-LAST:event_nineActionPerformed
@@ -1137,7 +1061,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_shiftMouseClicked
 
     private void radianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radianActionPerformed
-        degrad = true; 
+        degrad = true;
     }//GEN-LAST:event_radianActionPerformed
 
     private void degreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_degreeActionPerformed
@@ -1148,7 +1072,14 @@ public class Calculator extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_memorydisplayActionPerformed
 
-    public static void main(String args[]) {
+    public static void main(String args[])
+    {
+        try
+        {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e)
+        {
+        }
         java.awt.EventQueue.invokeLater(() ->
         {
             new Calculator().setVisible(true);
